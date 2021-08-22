@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id='app'>
+        <!-- Preencha a tag<p> abaixo com o seu Nome e Idade - usando Interpolação-->
+        <p>Usando VueJ - {{ nome }} {{idade }}</p>
+
+        <!-- Exibe sua idade multiplicadas por 3-->    
+        <p>{{idade * 3}}</p>
+
+        <!-- Chame uma função para exibir um numero aleatorio-->
+        <p>{{ aleatorio() }}</p>
+
+        <!--Procure uma imagem no google e exiba na tag img fazendo o binding no atributo src -->
+        <p><img v-bind:src='imagem' width=100 height=100></p>
+
+        <!--Inicialize o input com o seu nome-->
+        <div>
+            <input v-bind:value='nome' type='text'>
+        </div>
+    </div>
+
+    <script >
+        new Vue({
+            el:'#app',
+            data:{
+                nome:'Victor',
+                idade:35,
+                imagem : 'http://files.cod3r.com.br/curso-vue/vue.jpg'
+            },
+            methods:{
+                aleatorio:function(){
+                    return Math.random()
+                }
+            }
+        })
+    </script>
+</body>
+</html>
